@@ -1,19 +1,118 @@
-{% extends 'info_header.html' %}
 {% load static %}
 
-{% block content %}
-    <html lang="en">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <title>StellarVape</title>
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
     </head>
     <body>
+        <!-- User Header -->
+        <div class="website-header">
+            <div class="sides-spacing"></div>
+
+             <div class="instagram">
+                <figure>
+                    <a href="https://www.instagram.com/stellarvape/">
+                        <img src="{% static 'images/instagram_icon.png' %}" width="30" height="30" alt="Instagram">
+                    </a>
+                </figure>
+            </div>
+
+            <div class="facebook">
+                <figure>
+                    <a href="https://www.facebook.com/stellarvape/">
+                        <img src="{% static 'images/facebook_icon.png' %}" width="30" height="30" alt="Facebook">
+                    </a>
+                </figure>
+            </div>
+
+            <div class="whatsapp">
+                <img src="{% static 'images/whatsapp_icon.png' %}" width="30" height="30" alt=""> (17) 99736-7543
+            </div>
+
+            <div class="mail">
+                <img src="{% static 'images/mailbox_icon.png' %}" width="30" height="30" alt=""> contato@stellarvape.com.br
+            </div>
+
+            <!-- Spacing between the contact information and user information -->
+            <span style="display:inline-block; width: 500px;"></span>
+
+            <div class="user">
+                {% if user.is_authenticated %}
+                    {% if user.gender == 'M' %}
+                        <figure>
+                            <a href="">
+                                <img src="{% static 'images/male_profile_icon.png' %}" width="45" height="45" alt="Minha conta">
+                                Minha Conta
+                            </a>
+                        </figure>
+
+                    {% elif user.gender == 'F' %}
+                        <figure>
+                            <a href="">
+                                <img src="{% static 'images/female_profile_icon.png' %}" width="45" height="45" alt="Minha conta">
+                                Minha Conta
+                            </a>
+                        </figure>
+
+                    {% else %}
+                        <figure>
+                            <a href="">
+                                <img src="{% static 'images/male_profile_icon.png' %}" width="45" height="45" alt="Minha conta">
+                                Minha Conta
+                            </a>
+                        </figure>
+                    {% endif %}
+
+                {% else %}
+                    <figure>
+                        <a href="">
+                            <img src="https://img.icons8.com/dusk/50/000000/logout-rounded-down--v1.png" width="45" height="45" alt="Registrar">
+                            Registrar
+                        </a>
+                    </figure>
+                {% endif %}
+
+                <!-- Spacing between the user shortcuts -->
+                <div style="display:inline-block; width: 30px;"></div>
+
+                <figure>
+                    <a href="">
+                        <img src="{% static 'images/cart_icon.png' %}" width="45" height="45" alt="Carrinho">
+                        Carrinho
+                    </a>
+                </figure>
+
+                {% if user.is_authenticated %}
+                    <!-- Spacing between the contact information (Whatsapp and email)-->
+                    <div style="display:inline-block; width: 30px;"></div>
+
+                    <figure>
+                        <a href="">
+                            <img src="{% static 'images/log_off_icon.png' %}" width="45" height="45" alt="Log off">
+                            Sair
+                        </a>
+                    </figure>
+                {% endif %}
+            </div>
+
+            <div class="sides-spacing"></div>
+        </div>
+
         <header>
-            <h1><a href="">StellarVape</a></h1>
+            <span class="search">
+                <a href="" id="website-name">
+                    <img src="{% static 'images/logo.jpg' %}" width="128" height="128" alt="StellarVape">
+                    <h1>StellarVape</h1>
+                </a>
+            </span>
         </header>
     </body>
-    </html>
+</html>
 
-{% endblock content %}

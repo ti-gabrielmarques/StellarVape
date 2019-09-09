@@ -1,29 +1,67 @@
-h1 a, h2 a {
-    color: #102961;
-    font-family: 'Lobster';
-    padding-left: 15px;
-    font-size: 120px;
-}
-
-.contact {
-    padding: 7px 7px     7px 50px;
-    font-family: 'Droid Serif';
-}
-
-.user-panel {
-    padding: 12px 7px 7px 1100px;
-    width:10px;
-    font-size:15px;
+.website-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    font-size:18px;
+    color: white;
+    background-color: black;
     font-family: 'Droid Serif'
 }
 
+.sides-spacing {
+    flex: 0.5;
+}
+
+.instagram {
+    flex: 0.2;
+    align-items: center;
+    justify-content: center;
+}
+
+.facebook {
+    flex: 0.2;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.mail {
+    flex: 1.5;
+    align-items: center;
+    justify-content: center;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 figure {
-    display: table;
-    width: 1px; /* This can be any width, so long as it's narrower than any image */
+  text-align: center;
 }
 
 figcaption {
-    display: table-caption;
-    caption-side: bottom;
+  text-align: center;
+  margin: 0 auto;
 }
 
+.search {
+    display: flex;
+    height: 300px;
+    font-family: 'Lobster';
+    padding-top: 50px;
+    padding-left: 50px;
+    background-image: url("/static/images/search_background.jpg");
+}
+
+.website-name {
+    color: #DACC45;
+    font-size: 400px;
+}
